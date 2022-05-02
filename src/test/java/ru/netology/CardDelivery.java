@@ -2,7 +2,7 @@ package ru.netology;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -21,5 +21,6 @@ public class CardDelivery {
     public void shouldSendForm() {
         String localD = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         $(".input__control[type='text'][placeholder='Город']").setValue("Калининград");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE); // предварительная чистка поля с датой по умолчанию
     }
 }
