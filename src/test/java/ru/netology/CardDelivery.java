@@ -22,5 +22,6 @@ public class CardDelivery {
         String localD = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         $(".input__control[type='text'][placeholder='Город']").setValue("Калининград");
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE); // предварительная чистка поля с датой по умолчанию
+        $("[data-test-id='date'] input").setValue(localD);
     }
 }
