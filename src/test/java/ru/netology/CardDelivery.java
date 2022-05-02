@@ -24,5 +24,6 @@ public class CardDelivery {
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE); // предварительная чистка поля с датой по умолчанию
         $("[data-test-id='date'] input").setValue(localD);
         $("[name='name']").setValue("Иванова Алла");
+        $("[name='phone']").setValue("+79993332211");
     }
 }
