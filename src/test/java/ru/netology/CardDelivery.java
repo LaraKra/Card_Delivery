@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
+import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -31,6 +32,7 @@ public class CardDelivery {
         $(".checkbox__box").click();
         $(".button").click();
         $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[class='notification__content']").shouldHave(exactText("Встреча успешно забронирована на " + localD), Duration.ofSeconds(15));
 
     }
 }
